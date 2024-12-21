@@ -7,6 +7,17 @@
     <script src="javascript.js"></script>
     <script src="https://kit.fontawesome.com/1e6b1462ac.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="javascript.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "5Tq9gJa-zkuwbBGK-",
+      });
+   })();
+</script>
 </head>
 <body>
     <section id="landing-page">
@@ -50,7 +61,7 @@
                 <h1 class="title title--secondary"><span class="color-text">I'm Darian.</span></h1>
                 <p class="header--para">I'm a <span class="color-text">Frontend Software Engineer</span> with a passion for building applications designed for great user experience.
                     <br>
-                    Here's a bit more <span class="color-text">about myself.</span></p>
+                    Here's a bit <span class="color-text">about myself.</span></p>
                 <div class="social__list">
                     <a href="https://www.linkedin.com/in/1darianwalker" target="_blank" class="social__link click">
                         <i class="fab fa-linkedin-in"></i>
@@ -72,29 +83,65 @@
         </a>
         <div class="modal">
             <div class="modal__half modal__about">
-                <h3 class="modal__title">Here's some important details about me</h3>
+                <h3 class="modal__title">What to know about me</h3>
                 <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
                 <p class="modal__para">
-                    I am a 26 year old American Frontend Software Engineer, my goal is to provide excellent work and further my career to better provide for my family.
-                    <br>
-                    I have extensive years of experience in problem solving, customer service, management, team projects and I always create a great experience for my customers.
+                    I am a 26 year old American <b class="color-text">Frontend Software Engineer</b>, my passion is developing websites that have one result: <b class="color-text">Satisfaction</b>.
+                </p>
+                <p class="modal__para">
+                    I have extensive years of experience in <b class="color-text">problem solving</b>, <b class="color-text">customer service</b>, <b class="color-text">management</b>, and create great <b class="color-text">user experiences</b>.
                 </p>
                 <div class="modal__languages">
                     <figure class="modal__language">
-                        <img src="/assets/html.png" alt="html logo">
+                        <img src="/assets/html.png" class="modal_language--img" alt="html logo">
+                        <span class="language__name">HTML</span>
                     </figure>
                     <figure class="modal__language">
-                        <img src="/assets/css.png" alt="css logo">
+                        <img src="/assets/css.png"class="modal_language--img"  alt="css logo">
+                        <span class="language__name">CSS</span>
                     </figure>
                     <figure class="modal__language">
-                        <img src="/assets/js.png" alt="javascript logo">
+                        <img src="/assets/js.png" class="modal_language--img"  alt="javascript logo">
+                        <span class="language__name">JAVASCRIPT</span>
                     </figure>
                     <figure class="modal__language">
-                        <img src="/assets/python.png" alt="python logo">
+                        <img src="/assets/python.png" class="modal_language--img"  alt="python logo">
+                        <span class="language__name">PYTHON</span>
                     </figure>
                 </div>
             </div>
-            <div class="modal__half modal__contact">Let's chat!</div>
+            <div class="modal__half modal__contact">
+                <h3 class="modal__title modal__title--contact">
+                    Let's chat!
+                </h3>
+                <h4 class="modal__title modal__sub-title--contact">
+                    I'm currently available for new opportunities.
+                </h4>
+                <form id="contact__form=" action="" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input type="text" class="input" name="user_name" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input type="email" class="input" name="user_email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea type="text" class="input" name="message" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it over
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thank you for your interest! I look forward to speaking with you shortly.
+                </div>
+            </div>
+            <i class="fas fa-times modal__exit click"></i>
         </div>
     </section>
     <section id="projects">
