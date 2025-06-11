@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunting</title>
+    <link rel="stylesheet" href="treasures.css">
+    <script src="https://kit.fontawesome.com/1e6b1462ac.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <script src="index.js"></script>
+    <script src="treasures.js"></script>
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body onmousemove="moveBackground(event)">
+<section>
+    <nav>
+        <figure>
+            <img class="logo click" src="favicon-32x32.png" onclick="toggleModal()">
+        </figure>
+        <ul class="nav__link--list">
+            <li class="nav__link">
+                <a href="index.html" class="
+                nav__link--anchor
+                link__hover-effect
+                link__hover-effect--black
+                ">Home</a>
+            </li>
+            <li class="nav__link">
+                <a href="treasures.html" class="
+                nav__link--anchor
+                link__hover-effect
+                link__hover-effect--black
+                ">Find your Treasure</a>
+            </li>
+            <li class="nav__link" onclick="toggleModal()">
+                <a href="#" class="
+                nav__link--anchor
+                link__hover-effect
+                link__hover-effect--black
+                ">Contact</a>
+            </li>
+            <li class="nav__link click">
+                <a href="#" class="
+                nav__link--anchor
+                link__hover-effect
+                "><i class="fas fa-adjust" onclick="toggleContrast()"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <figure>
+    <div class="container">
+        <div class="row">
+            <div class="treasure__header">
+                <h2 class="section__title treasure__header--title ">
+                All <span class="color">Treasures</span>
+                </h2>
+                <select id="filter" onchange="filterTreasure(event)">
+                <option value="" disabled selected>Sort</option>
+                <option value="LOW_TO_HIGH">Price, Low to High</option>
+                <option value="HIGH_TO_LOW">Price, High to Low</option>
+                <option value="MANGA">Manga</option>
+                </select>
+            </div> 
+            <div class="treasures treasure__loading">
+                <i class="fas fa-spinner treasures__loading--spinner color"></i>
+            </div>
+        </div>
+    </div>
+        <img class="anime__background" src="assets/420860-digital-art-Japanese-Art-night-street-rain-Market.jpg">
+
+    </figure>
+    <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fas fa-envelope"></i>
+    </button>
+    <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title">One Stop Shop</h3>
+            <p class="modal__para">
+                Welcome to <b class="color-text">Anime Central</b>, where we provide a smooth shopping experience for any item you may want! <b class="color-text">Satisfaction Guaranteed</b>.
+            </p>
+            <p class="modal__para">
+                You can expect <b class="color-text">quality</b>, <b class="color-text">variety</b>, and <b class="color-text">customer service</b>.
+            </p>
+            <div class="modal__imgs">
+                <figure class="modal__img">
+                    <img src="/assets/smart-tv-icon-on-transparent-background-free-png.webp" class="modal_about--img modal_about--img-1" alt="anime">
+                    <span class="img__name">Anime</span>
+                </figure>
+                <figure class="modal__img">
+                    <img src="/assets/manga.book.v1.png"class="modal_about--img"  alt="manga">
+                    <span class="img__name">Manga</span>
+                </figure>
+                <figure class="modal__img">
+                    <img src="assets/figure.silhouette.png" class="modal_about--img"  alt="figures">
+                    <span class="img__name">Figures</span>
+                </figure>
+                <figure class="modal__img">
+                    <img src="assets/anime.trinkets.png" class="modal_about--img modal_about--img-2"  alt="trinkets">
+                    <span class="img__name">Trinkets</span>
+                </figure>
+            </div>
+        </div>
+        <div class="modal__half modal__contact">
+            <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">
+                Any Questions?
+            </h3>
+            <h4 class="modal__title modal__sub-title--contact">
+                We are here to assist!
+            </h4>
+            <form id="contact__form=" action="" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input type="text" class="input" name="user_name" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input type="email" class="input" name="user_email" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea type="text" class="input" name="message" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">
+                    Send it over
+                </button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thank you for your interest! I look forward to speaking with you shortly.
+            </div>
+        </div>
+    </div>
+    <img class="shape shape--0" src="/assets/25712576_7052238.svg">
+    <img class="shape shape--1" src="/assets/25712577_7052247.svg">
+    <img class="shape shape--2" src="/assets/25712574_7052229.svg">
+    <img class="shape shape--3" src="/assets/25712566_7052194.svg">
+    <img class="shape shape--4" src="/assets/25712569_7052201.svg">
+    <img class="shape shape--5" src="/assets/25712576_7052238.svg">
+    <img class="shape shape--6" src="/assets/25712577_7052247.svg">
+    <img class="shape shape--7" src="/assets/25712566_7052194.svg">
+    <img class="shape shape--8" src="/assets/25712569_7052201.svg">
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer__row">
+            <figure>
+            <a href="#landing-page"><img src="favicon-32x32.png" class="logo click" alt="Logo"></a>
+            </figure>
+            <div class="footer__social--list">
+                <a href="https://github.com/WretchedAbyss11" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">
+                Developer</a>
+                <a href="https://www.linkedin.com/in/1darianwalker" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">
+                Careers</a>
+                <a href="https://www.freepik.com/" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">
+                Attributions</a>
+                <a href="#landing-page" onclick="toggleModal()" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white">
+                Contact</a>
+            </div>
+            <div class="footer__copyright">Copyright © Made by Darian Walker</div>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
